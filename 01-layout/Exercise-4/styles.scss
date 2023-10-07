@@ -1,0 +1,81 @@
+$font-family-gill: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+  sans-serif;
+  $button-background: rgb(92, 157, 92);
+  $button-background-hover: rgba(92, 157, 92, 0.7);
+  $white: white;
+  $green: green;
+  $lightgrey: lightgrey;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: $font-family-gill;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 50px;
+  &__card {
+    border: 2px solid $lightgrey;
+    display: grid;
+    width: 300px;
+    height: 600px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 1fr 100px;
+    -webkit-box-shadow: -9px 7px 23px #000000bf;
+    -moz-box-shadow: -9px 7px 23px #000000bf;
+    box-shadow: -9px 7px 23px #000000bf;
+    &__header {
+      &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__body {
+      display: grid;
+      padding-inline: 1rem;
+      align-content: space-evenly;
+      &__title {
+        font-size: 24px;
+        font-weight: 300;
+        text-decoration: underline;
+      }
+      &__text {
+        font-weight: 300;
+      }
+    }
+    &__footer {
+      padding-inline: 1rem;
+      display: grid;
+      grid-template-rows: 30px 1fr;
+      margin-bottom: 15px;
+      &__date {
+        margin-left: auto;
+        & span {
+          color: $green;
+        }
+      }
+      &__button {
+        background-color: $button-background;
+        border: none;
+        font-size: 18px;
+        padding: 1rem;
+        color: $white;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+          background-color: $button-background-hover;
+        }
+      }
+    }
+  }
+}
