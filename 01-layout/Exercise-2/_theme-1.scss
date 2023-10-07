@@ -1,0 +1,14 @@
+$font-family-courier: "Courier New", Courier, monospaces;
+$background-color-red: red;
+$border-radius: 30px;
+$text-color-black: black;
+
+@mixin theme-1{
+    font-family: $font-family-courier;
+    background-color: $background-color-red;
+    color: $text-color-black;
+    border-radius: $border-radius;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
