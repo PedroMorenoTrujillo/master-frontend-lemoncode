@@ -1,0 +1,67 @@
+$color-1: red;
+$color-2: green;
+$color-3: gold;
+$container-box-number: 4;
+
+@mixin color-assigner($color) {
+  @for $i from 1 through $container-box-number {
+    .box {
+      padding: 1rem;
+      border: 1px solid $color;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &.base-color {
+        width: 8rem;
+      }
+      &.darken-#{$i} {
+        background-color: darken($color, 10 * $i);
+        color: white;
+      }
+      &.lighten-#{$i} {
+        background-color: lighten($color, 10 * $i);
+      }
+      &.base-color {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@mixin container() {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+@mixin container-color($index) {
+  @include container();
+  @if $index == 1 {
+    @include color-assigner($color-1);
+  }
+  @if $index == 2 {
+    @include color-assigner($color-2);
+  }
+  @if $index == 3 {
+    @include color-assigner($color-3);
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.container-1 {
+  @include container-color(1);
+}
+.container-2 {
+  @include container-color(2);
+}
+.container-3 {
+  @include container-color(3);
+}
