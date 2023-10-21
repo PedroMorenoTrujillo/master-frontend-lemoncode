@@ -1,0 +1,9 @@
+import "./Exercise-1/exercise-1";
+import "./Exercise-1/exercise-2";
+import "./Exercise-1/exercise-3";
+import "./Exercise-1/exercise-4";
+import "./Exercise-2/exercise-1";
+import "./Exercise-3/exercise-1";
+import "./Exercise-3/exercise-2";
+import "./Exercise-4/exercise-1";
+import "./Exercise-5/exercise-1";
