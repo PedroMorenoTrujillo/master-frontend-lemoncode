@@ -1,0 +1,14 @@
+@mixin box-shadows($box-shadow) {
+    -webkit-box-shadow: $box-shadow;
+    -moz-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+
+@mixin container{
+    div{
+        width: 150px;
+        height: 100px;
+        font-size: 24px;
+        padding: 1rem;
+    }
+}

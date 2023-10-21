@@ -1,0 +1,36 @@
+@use 'theme-1' as theme;
+//@use 'theme-2' as theme;
+@import 'mixins';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 50px 100px;
+  @include container;
+  .base {
+    background-color: theme.$background-color;
+    font-family: theme.$font-family-primary;
+  }
+  .important {
+    background-color: darken(theme.$background-color, 25%);
+    font-family: theme.$font-family-primary;
+  }
+  .warning {
+    background-color: lighten(theme.$background-color, 25%);
+    font-family: theme.$font-family-primary;
+  }
+  .main-font {
+    font-family: theme.$font-family-primary;
+  } 
+  .sec-font {
+    font-family: theme.$font-family-secondary;
+  } 
+  .shadow {
+    @include box-shadows(theme.$box-shadow);
+    font-family: theme.$font-family-primary;
+  } 
+}
