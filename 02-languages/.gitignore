@@ -1,6 +1,7 @@
 /dist
 /exercises/node_modules
 /.parcel-cache
+transpiled/
 .DS_Store
 .vscode/
 .idea/
