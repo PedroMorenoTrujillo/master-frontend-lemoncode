@@ -6,7 +6,6 @@ import url from "node:url";
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export default {
-  mode: "development",
   context: path.resolve(__dirname, "src"),
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],

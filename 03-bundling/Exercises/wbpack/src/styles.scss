@@ -1,9 +1,11 @@
-$background-color: red;
+$background-color: IndianRed;
+$font-size: 24px;
+$title-color: white;
 
-.background-red{
+.container {
+  .title {
     background-color: $background-color;
-}
-
-img{
-    width: 200px;
+    color: $title-color;
+    padding-left: 15px;
+  }
 }
