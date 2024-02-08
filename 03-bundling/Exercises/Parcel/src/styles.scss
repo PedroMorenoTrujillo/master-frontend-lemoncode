@@ -1,0 +1,11 @@
+$background-color: IndianRed;
+$font-size: 24px;
+$title-color: white;
+
+.container {
+  .title {
+    background-color: $background-color;
+    color: $title-color;
+    padding-left: 15px;
+  }
+}
