@@ -32,9 +32,9 @@ export const routes: Routes = [
     canMatch: [AuthGuard],
   },
   {
-    path: APPROUTES.GALERY,
+    path: APPROUTES.GALLERY,
     loadComponent: () =>
-      import('./pages/galery/galery.component').then((c) => c.GaleryComponent),
+      import('./pages/gallery/gallery.component').then((c) => c.GalleryComponent),
     canMatch: [AuthGuard],
   },
   {

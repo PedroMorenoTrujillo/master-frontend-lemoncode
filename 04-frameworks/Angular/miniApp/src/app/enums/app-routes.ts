@@ -3,7 +3,7 @@ export enum APPROUTES{
   LOGIN='login',
   ABOUT='about',
   DASHBOARD='dashboard',
-  GALERY='galery',
+  GALLERY='gallery',
   CRUD='crud',
   PROFILE='profile'
 }

@@ -25,8 +25,8 @@ export const routes: HeaderRoutes[] = [
     canLoadWithLogin: true
   },
   {
-    label: ROUTESLABEL.GALERY,
-    route: APPROUTES.GALERY,
+    label: ROUTESLABEL.GALLERY,
+    route: APPROUTES.GALLERY,
     isActive: false,
     canLoadWithLogin: true
   },

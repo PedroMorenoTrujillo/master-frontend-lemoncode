@@ -3,7 +3,7 @@ export enum ROUTESLABEL {
   LOGIN='Login',
   ABOUT='About',
   DASHBOARD='Dashboard',
-  GALERY='Galery',
+  GALLERY='Gallery',
   CRUD='Crud',
   PROFILE='Profile'
 }
