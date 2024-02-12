@@ -1,0 +1,20 @@
+<header class="bg-info">
+  <div class="d-flex justify-content-between align-items-center px-3">
+    <div class="title-container d-flex align-items-center">
+      <img src="./assets/logos/logo1.png" alt="logo" />
+      <span class="title-container__title fw-bold px-2">MiAPP</span>
+    </div>
+    @if(userName$ | async; as name){
+    <div class="name-container bg-info fw-bold">
+      <span>Hello, {{ name }}!</span>
+      <a
+      class="name-container__link"
+      [routerLink]="'/'"
+      (click)="logout()"
+      >Logout</a
+    >
+    </div>
+    }
+  </div>
+  <app-navbar></app-navbar>
+</header>

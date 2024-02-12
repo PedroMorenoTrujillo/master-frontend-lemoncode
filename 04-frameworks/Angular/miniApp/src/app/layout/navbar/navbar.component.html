@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center">
+  <nav class="col-12">
+    <ul class="routes-container">
+      @for( route of headerRoutes; track route.label){
+        @if(route?.isActive){
+          <li class="routes-container__item">
+            <a
+              class="routes-container__item__link"
+              [routerLink]="route?.route"
+              routerLinkActive="link-active"
+              >{{ route.label }}</a
+            >
+          </li>
+        }
+     }
+    </ul>
+  </nav>
+</div>

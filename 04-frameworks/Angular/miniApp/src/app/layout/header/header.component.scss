@@ -1,0 +1,16 @@
+header{
+  .title-container{
+    img{
+      width: 50px;
+    }
+  }
+  .name-container__link{
+    padding: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-left: 1rem;
+  }
+}
