@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -13,7 +13,7 @@ import { User } from 'app/global/models';
 import { Router } from '@angular/router';
 import { APPROUTES } from '@enums/app-routes';
 import { LoaderComponent } from 'app/components/loader/loader.component';
-import { tap } from 'rxjs';
+import { Subject, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -27,12 +27,13 @@ import { tap } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm!: FormGroup<LoginForm>;
   loginService = inject(LoginService);
   router = inject(Router);
   errorMessage: string | null = null;
   isLoading: boolean = false;
+  private unsubscribe: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -47,17 +48,27 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.isLoading = true;
-    this.loginService.login(this.loginForm.value as User).subscribe({
-      next: (value) => {
-        if (value) {
-          this.router.navigate([APPROUTES.DASHBOARD]);
-        } else {
-          this.errorMessage = value ? null : 'User name or password incorrect';
-          this.loginForm.reset();
-          setTimeout(() => (this.errorMessage = null), 4000);
-        }
-      },
-      complete: () => (this.isLoading = false),
-    })
+    this.loginService
+      .login(this.loginForm.value as User)
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe({
+        next: (value) => {
+          if (value) {
+            this.router.navigate([APPROUTES.DASHBOARD]);
+          } else {
+            this.errorMessage = value
+              ? null
+              : 'User name or password incorrect';
+            this.loginForm.reset();
+            setTimeout(() => (this.errorMessage = null), 4000);
+          }
+        },
+        complete: () => (this.isLoading = false),
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }
