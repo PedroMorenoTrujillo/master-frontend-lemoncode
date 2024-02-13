@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { galleryList } from './tools';
 import { GalleryItem } from './models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './gallery.component.html',
-  styleUrl: './gallery.component.scss'
+  styleUrl: './gallery.component.scss',
 })
 export class GalleryComponent implements OnInit {
   imageList: GalleryItem[] = [...galleryList];
   selectedImage: GalleryItem = this.imageList[0];
   currentIndex: number = 0;
-  imgCurrentIndex: number = 0
+  imgCurrentIndex: number = 0;
   isPlaying: boolean = false;
   interval: any;
   itemsPerPage: number = 3;
+  isSizeIncrease: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   selectImage(image: GalleryItem): void {
     this.selectedImage = image;
@@ -46,7 +47,7 @@ export class GalleryComponent implements OnInit {
       if (this.imgCurrentIndex < this.imageList.length - 1) {
         this.imgCurrentIndex++;
         this.selectImage(this.imageList[this.imgCurrentIndex]);
-      }else{
+      } else {
         clearInterval(this.interval);
         this.isPlaying = false;
       }
@@ -58,12 +59,8 @@ export class GalleryComponent implements OnInit {
     this.isPlaying = false;
   }
 
-  increaseSize(): void {
-    // Implementa el código para aumentar el tamaño de la imagen seleccionada
-  }
-
-  decreaseSize(): void {
-    // Implementa el código para disminuir el tamaño de la imagen seleccionada
+  changeSize(): void {
+    this.isSizeIncrease = !this.isSizeIncrease;
   }
 
   isFirstGroup(): boolean {
@@ -72,5 +69,4 @@ export class GalleryComponent implements OnInit {
   isLastGroup(): boolean {
     return this.currentIndex + this.itemsPerPage >= this.imageList.length;
   }
-
 }

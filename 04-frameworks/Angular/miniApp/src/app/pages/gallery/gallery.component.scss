@@ -4,16 +4,20 @@
   align-items: center;
   padding: 20px;
 
-  .selected-image {
+  &__selected-image {
     margin-bottom: 20px;
 
     img {
       max-width: 100%;
       height: auto;
+      transition: all 0.3s ease;
+      &.size-increase {
+        transform: scale(1.2);
+      }
     }
   }
 
-  .gallery-images {
+  &__gallery-images {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -22,13 +26,14 @@
       cursor: pointer;
 
       img {
-        max-width: 100%;
-        height: auto;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
       }
     }
   }
 
-  .navigation-buttons {
+  &__navigation-buttons {
     margin-top: 20px;
 
     button {
