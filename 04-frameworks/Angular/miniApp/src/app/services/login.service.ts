@@ -11,7 +11,7 @@ export class LoginService {
     password: '12345678',
   };
 
-  isLogged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  isLogged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   userName: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(
     null
   );

@@ -1,53 +1,8 @@
-.gallery-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-
-  &__selected-image {
-    margin-bottom: 20px;
-
-    img {
-      max-width: 100%;
-      height: auto;
-      transition: all 0.3s ease;
-      &.size-increase {
-        transform: scale(1.2);
-      }
-    }
-  }
-
-  &__gallery-images {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-
-    .gallery-image {
-      cursor: pointer;
-
-      img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-      }
-    }
-  }
-
-  &__navigation-buttons {
-    margin-top: 20px;
-
-    button {
-      margin-right: 10px;
-      padding: 10px;
-      background-color: lightblue;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
+.toggle-button{
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: lightblue;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1rem;
 }

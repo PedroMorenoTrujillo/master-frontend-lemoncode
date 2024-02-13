@@ -1,0 +1,33 @@
+<div class="gallery-container text-center mt-4">
+  <div class="gallery-container__selected-image">
+    <img
+      [src]="selectedImage.src"
+      [alt]="selectedImage.title"
+      [ngClass]="{ 'size-increase': isSizeIncrease }"
+    />
+    <h3>{{ selectedImage.title | uppercase }}</h3>
+  </div>
+  <div class="gallery-container__gallery-images d-flex">
+    @for(image of imageList | slice:currentIndex:(currentIndex + 3); track
+    image.id){
+    <div class="gallery-image" (click)="selectImage(image)">
+      <img [src]="image.src" [alt]="image.title" />
+    </div>
+    }
+  </div>
+
+  <div class="gallery-container__navigation-buttons">
+    <button (click)="previous()" [disabled]="isFirstGroup()">Previous</button>
+    <button (click)="next()" [disabled]="isLastGroup()">Next</button>
+    @if (!isPlaying){
+    <button (click)="play()">Play</button>
+    } @else {
+    <button (click)="stop()">Stop</button>
+    }
+
+    <button (click)="changeSize()">
+      {{ isSizeIncrease ? "Decrease Size" : "Increase Size" }}
+    </button>
+  </div>
+</div>
+
