@@ -18,6 +18,7 @@
 const { addTask } = useTaskList();
 let task = ref("");
 const onSubmit = () => {
+  if (task.value === "") return;
   addTask(task.value);
   task.value = "";
 };

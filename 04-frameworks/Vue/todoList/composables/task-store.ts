@@ -7,7 +7,8 @@ export const useTaskList = defineStore(
 
     const getTaskList = () => {
       return taskList.value;
-    }
+    };
+    
     const addTask = (task: string) => {
       taskList.value.push({
         taskId: Date.now().toString(),
@@ -18,7 +19,7 @@ export const useTaskList = defineStore(
 
     const removeTask = (taskId: string) => {
       taskList.value = taskList.value.filter((task) => task.taskId !== taskId);
-    }
+    };
 
     const changeTaskStatus = (taskId: string) => {
       taskList.value = taskList.value.map((task) => {
@@ -27,13 +28,23 @@ export const useTaskList = defineStore(
         }
         return task;
       });
-    }
+    };
+
+    const changeTaskName = (task: TodoItem) => {
+      taskList.value = taskList.value.map((t) => {
+        if (t.taskId === task.taskId) {
+          t.task = task.task;
+        }
+        return t;
+      });
+    };
     return {
-        taskList,
-        getTaskList,
-        addTask,
-        removeTask,
-        changeTaskStatus
+      taskList,
+      getTaskList,
+      addTask,
+      removeTask,
+      changeTaskStatus,
+      changeTaskName
     };
   },
   { persist: true }
