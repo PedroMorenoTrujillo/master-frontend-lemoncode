@@ -13,12 +13,10 @@
     "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.10.3",
     "pinia": "^2.1.7",
-    "usebootstrap": "^3.5.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "nuxt-bootstrap-icons": "^1.1.7"
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0"
   }
 }

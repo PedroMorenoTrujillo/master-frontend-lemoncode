@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
-    "usebootstrap",
-    "nuxt-bootstrap-icons",
     "@pinia/nuxt",
     "@pinia-plugin-persistedstate/nuxt",
   ],

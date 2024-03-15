@@ -1,5 +1,11 @@
 <template>
-  <div>
-    <MainLayout/>
+  <div class="app-container">
+    <MainLayout />
   </div>
-</template>s
+</template>
+
+<style scoped lang="scss">
+.app-container {
+  text-align: center;
+}
+</style>

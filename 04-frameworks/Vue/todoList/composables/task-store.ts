@@ -3,11 +3,7 @@ import type { TodoItem } from "~/types";
 export const useTaskList = defineStore(
   "taskList",
   () => {
-    const taskList = ref<TodoItem[]>([{
-      taskId: Date.now().toString(),
-      task: "Learn Nuxt 3",
-      completed: false,
-    }]);
+    const taskList = ref<TodoItem[]>([]);
 
     const getTaskList = () => {
       return taskList.value;
