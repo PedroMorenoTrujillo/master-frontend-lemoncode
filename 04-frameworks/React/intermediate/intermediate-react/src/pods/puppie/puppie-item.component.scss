@@ -1,0 +1,27 @@
+.item-list {
+  height: 350px;
+  padding: 0.5rem;
+  &__image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  &__title {
+    display: block;
+    font-size: 24px;
+  }
+  &__container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__title {
+      font-size: 17px;
+    }
+    &__checkbox {
+      margin-left: 10px;
+      height: 15px;
+    }
+  }
+}

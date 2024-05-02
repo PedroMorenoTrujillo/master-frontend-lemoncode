@@ -1,0 +1,28 @@
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid darkgoldenrod;
+  &__image {
+    width: 95px;
+    height: 95px;
+    object-fit: cover;
+  }
+  &__title {
+    font-size: 20px;
+  }
+  &__button {
+    background-color: darkgoldenrod;
+    color: white;
+    font-size: 12px;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    &:hover {
+      background-color: goldenrod;
+    }
+  }
+}

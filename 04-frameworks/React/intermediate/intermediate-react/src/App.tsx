@@ -1,6 +1,5 @@
 import React from "react";
-import "./App.css";
-import { Layout } from "./layout";
+import { AppLayout, MainLayout } from "./layout";
 import { Cart } from "./scenes";
 import { PictureProvider } from "./core/Picture";
 import { RouterComponent } from "./core/router";
@@ -10,12 +9,12 @@ export const App: React.FC = () => {
   return (
     <PictureProvider>
       <Router>
-        <Layout>
-          <div>
+        <AppLayout>
+          <MainLayout>
             <RouterComponent />
             <Cart />
-          </div>
-        </Layout>
+          </MainLayout>
+        </AppLayout>
       </Router>
     </PictureProvider>
   );

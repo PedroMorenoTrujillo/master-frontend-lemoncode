@@ -1,5 +1,5 @@
 import { PictureInfo } from "../../core/models";
-
+import './cart-item.component.scss';
 interface Props {
   picture: PictureInfo;
   onRemove: (id: string) => void;
@@ -7,10 +7,10 @@ interface Props {
 
 export const CartItem: React.FC<Props> = ({ picture, onRemove }) => {
   return (
-    <div>
-      <img src={picture.picUrl} alt={picture.title} />
-      <span>{picture.title}</span>
-      <button onClick={() => onRemove(picture.id)}>Remove</button>
+    <div className="cart-item">
+      <img className="cart-item__image" src={picture.picUrl} alt={picture.title} />
+      <span className="cart-item__title">{picture.title}</span>
+      <button className="cart-item__button" onClick={() => onRemove(picture.id)}>Remove</button>
     </div>
   );
 };

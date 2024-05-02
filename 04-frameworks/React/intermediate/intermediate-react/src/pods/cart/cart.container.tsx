@@ -1,7 +1,7 @@
 import React from "react";
 import { PictureContext } from "../../core/Picture";
 import { CartComponent } from ".";
-
+import "./cart.container.scss";
 export const CartContainer: React.FC = () => {
   const { pictureList, selectedIds, setSelectedIds } =
     React.useContext(PictureContext);
@@ -17,11 +17,20 @@ export const CartContainer: React.FC = () => {
     setSelectedIds([]);
   };
   return (
-    <>
-      <CartComponent pictureList={selectedPictures} onRemove={onRemove} />
-      <div>
-        <button onClick={removeAll}>Remove all items</button>
+    <div className="cart-container">
+      <div className="cart-container__items">
+        <CartComponent pictureList={selectedPictures} onRemove={onRemove} />
       </div>
-    </>
+      {selectedPictures.length > 0 && (
+        <div className="cart-container__button-container">
+          <button
+            className="cart-container__button-container--remove"
+            onClick={removeAll}
+          >
+            Remove all images
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
