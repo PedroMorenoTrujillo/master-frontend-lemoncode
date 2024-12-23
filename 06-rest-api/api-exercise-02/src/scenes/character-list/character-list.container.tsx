@@ -41,7 +41,7 @@ export const CharacterListContainer: React.FC = () => {
 
   const handleGenderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setGender(e.target.value);
-    setPage(1); // Reset page to 1 when performing a new search
+    setPage(1);
   };
 
   if (loading) {
