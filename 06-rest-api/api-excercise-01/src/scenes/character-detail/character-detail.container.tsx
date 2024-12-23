@@ -9,7 +9,7 @@ export const CharacterDetailContainer: React.FC = () => {
   const [character, setCharacter] = useState<Character | null>(null);
 
   useEffect(() => {
-    AxiosGet(`https://rickandmortyapi.com/api/character/${id}`)
+    AxiosGet(`character/${id}`)
       .then((response) => {
         setCharacter(response.data);
       })

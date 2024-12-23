@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000";
-const API_URL = BASE_URL + "/api/v1";
+const API_URL = "https://rickandmortyapi.com/api/"
 
 export const AxiosConfig = axios.create({
   baseURL: API_URL,

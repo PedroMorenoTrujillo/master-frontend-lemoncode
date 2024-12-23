@@ -8,7 +8,7 @@ const CharacterListContainer: React.FC = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
 
   useEffect(() => {
-    AxiosGet("https://rickandmortyapi.com/api/character")
+    AxiosGet("character")
       .then(response => {
         setCharacters(response.data.results);
       })
