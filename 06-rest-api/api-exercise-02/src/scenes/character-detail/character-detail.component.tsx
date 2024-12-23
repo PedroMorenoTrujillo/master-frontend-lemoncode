@@ -7,6 +7,7 @@ interface Props {
   setBestSentence: (sentence: string) => void;
   handleSave: () => void;
   handleEdit: (sentence: string, index: number) => void;
+  handleDelete: (index: number) => void;
 }
 
 export const CharacterDetailComponent: React.FC<Props> = ({
@@ -15,6 +16,7 @@ export const CharacterDetailComponent: React.FC<Props> = ({
   setBestSentence,
   handleSave,
   handleEdit,
+  handleDelete,
 }) => {
   return (
     <div>
@@ -29,7 +31,9 @@ export const CharacterDetailComponent: React.FC<Props> = ({
       <ul>
         {character.bestSentences.map((sentence, index) => (
           <li key={index}>
-            {sentence} <button onClick={() => handleEdit(sentence, index)}>Edit</button>
+            {sentence} 
+            <button onClick={() => handleEdit(sentence, index)}>Edit</button>
+            <button onClick={() => handleDelete(index)}>Delete</button>
           </li>
         ))}
       </ul>

@@ -58,6 +58,25 @@ export const CharacterDetailContainer: React.FC = () => {
     setEditingIndex(index);
   };
 
+  const handleDelete = (index: number) => {
+    if (character) {
+      const updatedBestSentences = character.bestSentences.filter((_, i) => i !== index);
+      const updatedCharacter = {
+        ...character,
+        bestSentences: updatedBestSentences,
+      };
+
+      AxiosPut(`characters/${id}`, updatedCharacter)
+        .then((response) => {
+          setCharacter(response.data);
+        })
+        .catch((error) => {
+          console.error("Error updating data: ", error);
+          setError("Error updating data");
+        });
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -77,6 +96,7 @@ export const CharacterDetailContainer: React.FC = () => {
       setBestSentence={setBestSentence}
       handleSave={handleSave}
       handleEdit={handleEdit}
+      handleDelete={handleDelete}
     />
   );
 };
