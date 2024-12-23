@@ -13,8 +13,8 @@ export interface Character {
     name: string;
     url: string;
   };
-  image: string;
   bestSentences: string[];
+  image: string;
   episode: string[];
   url: string;
   created: string;

@@ -11,7 +11,7 @@ export const CharacterListComponent: React.FC<Props> = ({ characters }) => {
     <div>
       <h1>Character List</h1>
       <ul>
-        {characters?.map((character) => (
+        {characters.map((character) => (
           <li key={character.id}>
             <Link to={`/character/${character.id}`}>{character.name}</Link>
           </li>

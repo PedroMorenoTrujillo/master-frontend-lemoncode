@@ -1,20 +1,32 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import "./App.scss";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NavBar from "./layout/navbar.component";
 import CharacterListContainer from "./scenes/character-list/character-list.container";
-import CharacterDetailContainer from "./scenes/character-detail/character-detail.container";
-import { AppLayout } from "./layout/app.layout";
+import EpisodeListContainer from "./scenes/episodie-list/episodie-list.container";
+import LocationListContainer from "./scenes/location-list/location-list.container";
+import { CharacterDetailContainer } from "./scenes/character-detail/character-detail.container";
+import LocationDetailContainer from "./scenes/location-detail/location-detail.container";
+import EpisodeDetailContainer from "./scenes/episode-detail/episode-detail.container";
 
-export const App = () => {
+const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <AppLayout>
+    <Router>
+      <div>
+        <NavBar />
         <Routes>
-          <Route path="/" element={<CharacterListContainer />} />
           <Route path="/character/:id" element={<CharacterDetailContainer />} />
+          <Route path="/characters" element={<CharacterListContainer />} />
+          <Route path="/locations" element={<LocationListContainer />} />
+          <Route path="/location/:id" element={<LocationDetailContainer />} />
+          <Route path="/episodes" element={<EpisodeListContainer />} />
+          <Route
+            path="/episode/:id"
+            element={<EpisodeDetailContainer />}
+          />{" "}
+          <Route path="/" element={<CharacterListContainer />} />
         </Routes>
-      </AppLayout>
-    </BrowserRouter>
+      </div>
+    </Router>
   );
 };
 
